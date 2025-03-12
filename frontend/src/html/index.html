@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/styles/input.css">
+    <link rel="stylesheet" href="/styles/output.css">
+    <script src="../js/index.js" defer></script>
+    <title>Table</title>
+</head>
+
+<body class="bg-gray-200 min-h-screen my-6 mx-16 items-center justify-center">
+    <div class="grid grid-cols-7 w-full font-bold bg-blue-500 rounded p-2 text-center">
+        <span>FILIAL</span>
+        <span>ANDAR</span>
+        <span>ESPINHA</span>
+        <span>PA</span>
+        <span>LOCAL COMPLETO</span>
+        <span>PATRIMONIO</span>
+        <span>AÇÕES</span>
+    </div>
+
+    <!-- itens criados -->
+    <div id="menu-container" class="w-full"></div>
+
+    <!-- Modal -->
+    <div id="modal-add"
+        class="fixed inset-0 bg-gray-200/90 flex items-center justify-center opacity-0 invisible transition-opacity duration-300 ease-in-out">
+        <div
+            class="bg-white rounded-lg shadow-lg p-8 max-w-lg w-full transform scale-90 transition-transform duration-300 ease-in-out">
+            <h1 class="text-2xl font-bold text-gray-800 mb-6">Adicionar Computador</h1>
+            <form action="/create" method="post" class="space-y-4">
+                <div>
+                    <label for="cad-patrimonio" class="block text-sm font-medium text-gray-700">Patrimônio</label>
+                    <input type="text" name="patrimonio" id="cad-patrimonio" placeholder="Patrimônio da máquina"
+                        class="mt-1 block p-2 w-full rounded-md border border-black shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm">
+                </div>
+                <div>
+                    <label for="cad-filial" class="block text-sm font-medium text-gray-700">Filial</label>
+                    <select name="filial" id="cad-filial"
+                        class="mt-1 block p-2 w-full rounded-md border border-black shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm">
+                        <option value="J0">Joinville Matriz (J0)</option>
+                        <option value="J1">Joinville Site (J1)</option>
+                        <option value="CWB">Curitiba (CWB)</option>
+                        <option value="SP">São Paulo (SP)</option>
+                    </select>
+                </div>
+
+                <div>
+                    <label for="cad-andar" class="block text-sm font-medium text-gray-700">Andar</label>
+                    <select name="andar" id="cad-andar"
+                        class="mt-1 block p-2 w-full rounded-md border border-black shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm">
+                    </select>
+                </div>
+
+                <div>
+                    <label for="cad-espinha" class="block text-sm font-medium text-gray-700">Espinha</label>
+                    <select name="espinha" id="cad-espinha"
+                        class="mt-1 block p-2 w-full rounded-md border border-black shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm">
+                    </select>
+                </div>
+
+                <div>
+                    <label for="cad-pa" class="block text-sm font-medium text-gray-700">PA</label>
+                    <select name="pa" id="cad-pa"
+                        class="mt-1 block p-2 w-full rounded-md border border-black shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm">
+                    </select>
+                </div>
+
+                <div>
+                    <label for="cad-carteira" class="block text-sm font-medium text-gray-700">Carteira</label>
+                    <select name="carteira" id="cad-carteira"
+                        class="mt-1 block p-2 w-full rounded-md border border-black shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm">
+                        <option value="BV WO">BV WO</option>
+                    </select>
+                </div>
+                <div class="mt-6">
+                    <button type="submit"
+                        class="w-full bg-blue-600 text-white py-2 px-4 rounded-md shadow hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2">
+                        Adicionar Computador
+                    </button>
+                </div>
+                <div class="mt-6">
+                    <button type="button" id="buttton-modal-fechar"
+                        class="w-full bg-yellow-600 text-white py-2 px-4 rounded-md shadow hover:bg-yellow-700 focus:outline-none focus:ring-2 focus:ring-yellow-500 focus:ring-offset-2">
+                        Fechar
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Botão para abrir o modal -->
+    <button class="w-full p-2 my-2 bg-purple-500 rounded-sm text-white cursor-pointer"
+        id="button-modal-add">Adicionar</button>
+
+</body>
