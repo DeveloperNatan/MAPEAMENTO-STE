@@ -15,3 +15,4 @@ app.use("/", require("./routes"));
 
 // start server
 app.listen(9000);
+console.log("http://localhost:9000/");

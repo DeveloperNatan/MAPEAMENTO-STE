@@ -14,17 +14,20 @@ datasource db {
 }
 
 model LocalizacaoPA {
-  id Int @id @default(autoincrement())
-  filial String
-  Andar String
-  Espinha String
-  PA String 
+  id               Int               @id @default(autoincrement())
+  filial           String
+  Andar            String
+  Espinha          String
+  PA               String
+  Carteira         String
+  RelacionamentoPA RelacionamentoPA?
 }
 
 model RelacionamentoPA {
-  id Int @id @default(autoincrement())
-  LocalCompleto String @unique
-  Patrimonio String @unique
-  DataCricao DateTime @default(now())
-  DataModificacao DateTime @updatedAt
+  id              Int            @id @default(autoincrement())
+  LocalCompleto   String         @unique
+  Patrimonio      String
+  DataCricao      DateTime       @default(now())
+  DataModificacao DateTime       @updatedAt
+  localizacaoPA   LocalizacaoPA? @relation(fields: [id], references: [id])
 }
